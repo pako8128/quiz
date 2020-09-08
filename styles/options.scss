@@ -18,6 +18,21 @@ main {
 	justify-content: space-around;
 }
 
+.fade {
+	animation: 1s fadein;
+}
+
+@keyframes fadein {
+	0% {
+		transform: translateY(-20%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0%);
+		opacity: 1;
+	}
+}
+
 .category {
 	text-align: center;
 }
@@ -47,4 +62,30 @@ img {
 	&:hover {
 		background: darkcyan;
 	}
+}
+
+.correct {
+	animation: correct 2s;
+}
+
+.wrong {
+	animation: wrong 2s;
+}
+
+@keyframes correct {
+	0% { background: cyan; }
+	20% { background: green; }
+	40% { background: cyan; }
+	60% { background: green; }
+	80% { background: cyan; }
+	100% { background: green; }
+}
+
+@keyframes wrong {
+	0% { background: cyan; }
+	20% { background: red; }
+	40% { background: cyan; }
+	60% { background: red; }
+	80% { background: cyan; }
+	100% { background: red; }
 }
