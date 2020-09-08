@@ -1,0 +1,49 @@
+body {
+	width: 100%;
+	height: 100vh;
+}
+
+main {
+	width: 80%;
+	height: 80%;
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	padding: 20px;
+	border-radius: 20px;
+	background: lightcyan;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.category {
+	text-align: center;
+}
+
+img {
+	width: 10em;
+	height: 10em;
+}
+
+.options {
+	width: 90%;
+	height: 50%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-gap: 1em;
+}
+
+.option {
+	background: cyan;
+	border-radius: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&:hover {
+		background: darkcyan;
+	}
+}
