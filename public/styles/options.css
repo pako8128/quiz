@@ -36,6 +36,7 @@ img {
   border-radius: 20px;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  transition: background 0.3s ease; }
   .option:hover {
     background: darkcyan; }
