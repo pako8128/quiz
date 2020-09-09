@@ -19,7 +19,8 @@ main {
   transform: translateX(150%);
   transition: transform 1s cubic-bezier(0.68, -0.2, 0.27, 1.2); }
   main h1 {
-    margin: 0.5em 2em 0.5em 2em; }
+    margin: 0.5em 2em 0.5em 2em;
+    text-align: center; }
 
 .category {
   text-align: center; }
