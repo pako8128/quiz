@@ -24,38 +24,6 @@ const categories = [
 ];
 
 let questions = [];
-// let questions = [
-// 	{
-// 		question: "Was ist ein Neutrino?",
-// 		answer: 0,
-// 		options: ["Elementarteilchen", "Atomkern", "Licht", "Zentrifuge"],
-// 		category: 0
-// 	},
-// 	{
-// 		question: "Was ist ein Neutronenstern?",
-// 		answer: 2,
-// 		options: ["kleinste Sternklasse", "größte Sternklasse", "Überreste eines Sterns", "Atomkernkonfiguration"],
-// 		category: 1
-// 	},
-// 	{
-// 		question: "Was ist Element Nummer 10?",
-// 		answer: 3,
-// 		options: ["Sauerstoff", "Helium", "Schwefel", "Neon"],
-// 		category: 2
-// 	},
-// 	{
-// 		question: "Wie ist die Summenformel für Wasserstoffperoxid?",
-// 		answer: 1,
-// 		options: ["H20", "H2O2", "H4O2", "H2O3"],
-// 		category: 0
-// 	},
-// 	{
-// 		question: "Wie lang ist ein Jahr auf Merkur?",
-// 		answer: 2,
-// 		options: ["53 Tage", "156 Tage", "88 Tage", "12 Jahre"],
-// 		category: 1
-// 	}
-// ];
 
 let currentQuestion = 0;
 
@@ -95,7 +63,7 @@ const setQuestion = (n) => {
 
 	question.innerHTML = q.question;
 	optionsText.forEach((opt, i) => {
-		opt.innerHTML = q.options[i];	
+		opt.innerHTML = q.options[i];
 	});
 };
 
@@ -112,22 +80,27 @@ main.addEventListener("transitionend", () => {
 
 options.forEach((opt, i) => {
 	opt.addEventListener("animationend", () => {
-		currentQuestion += 1;
-		opt.classList.remove("correct");
-		opt.classList.remove("wrong");
-		main.style.transform = "translateX(150%)";
-		if (currentQuestion == questions.length) {
-			questions = [];
-			fetchQuestions();
-			currentQuestion = 0;
+		if (opt.classList.contains("correct")) {
+			currentQuestion += 1;
+			opt.classList.remove("correct");
+			main.style.transform = "translateX(150%)";
+			if (currentQuestion == questions.length) {
+				questions = [];
+				fetchQuestions();
+				currentQuestion = 0;
+			}
+		} else {
+			opt.classList.remove("wrong");
 		}
 	});
 
 	opt.addEventListener("click", () => {
-		if (questions[currentQuestion].answer == i) {
+		let answer = questions[currentQuestion].answer;
+		if (answer == i) {
 			opt.classList.add("correct");
 		} else {
 			opt.classList.add("wrong");
+			options[answer].classList.add("correct");
 		}
 	});
 });
