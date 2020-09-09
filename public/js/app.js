@@ -76,6 +76,7 @@ const startup = async () => {
 main.addEventListener("transitionend", () => {
 	setQuestion(currentQuestion);
 	main.style.transform = "translateX(0%)";
+	main.style.pointerEvents = "all";
 });
 
 options.forEach((opt, i) => {
@@ -95,6 +96,7 @@ options.forEach((opt, i) => {
 	});
 
 	opt.addEventListener("click", () => {
+		main.style.pointerEvents = "none";
 		let answer = questions[currentQuestion].answer;
 		if (answer == i) {
 			opt.classList.add("correct");
