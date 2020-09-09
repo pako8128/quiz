@@ -18,6 +18,8 @@ main {
   justify-content: space-around;
   transform: translateX(150%);
   transition: transform 1s cubic-bezier(0.68, -0.2, 0.27, 1.2); }
+  main h1 {
+    margin: 0.5em 2em 0.5em 2em; }
 
 .category {
   text-align: center; }
@@ -40,7 +42,8 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background 0.3s ease; }
+  transition: background 0.3s ease;
+  padding: 0em 2em; }
   .option:hover {
     background: darkcyan; }
 
