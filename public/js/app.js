@@ -10,15 +10,15 @@ const main = document.querySelector("main");
 
 const categories = [
 	{
-		name: "Wissenschaft",
+		name: "Science",
 		img: "images/science.svg"
 	},
 	{
-		name: "Filme",
+		name: "Movies",
 		img: "images/movie.svg"
 	},
 	{
-		name: "Fernsehen",
+		name: "TV",
 		img: "images/tv.svg"
 	}
 ];
