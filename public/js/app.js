@@ -28,7 +28,7 @@ let questions = [];
 let currentQuestion = 0;
 
 const fetchQuestions = async () => {
-	await fetch("https://opentdb.com/api.php?amount=30&category=11&difficulty=medium&type=multiple")
+	await fetch("https://opentdb.com/api.php?amount=60&category=11&difficulty=medium&type=multiple")
 		.then(raw => raw.json())
 		.then(data => {
 			data.results.forEach((q) => parseQuestion(q));
